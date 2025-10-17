@@ -1,7 +1,6 @@
 import 'package:fintechproject/widget/ui_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../widget/bottom_navigation_item.dart';
 
@@ -11,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0XFF101010),
       body: SafeArea(
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
@@ -43,14 +42,14 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             const Icon(
                               Icons.person_add_alt_1_outlined,
-                              color: Colors.white,
+                              color: Color(0XFFEAEAEA),
                               size: 18,
                             ),
                             const SizedBox(width: 10),
                             const Text(
                               "Invite",
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Color(0XFFEAEAEA),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
                                 fontFamily: "medium",
@@ -73,7 +72,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           child: const Icon(
                             Icons.notifications_none_rounded,
-                            color: Colors.white,
+                            color: Color(0XFFEAEAEA),
                             size: 20,
                           ),
                         ),
@@ -112,18 +111,28 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 40),
                 Padding(
                   padding: const EdgeInsets.only(left: 20),
-                  child: UiHelper.CustomText(
-                    text: "Total balance · All time",
-                    color: const Color(0xFF9C9C9C),
-                    fontsize: 14,
-                    fontweight: FontWeight.w400,
-                    fontfamily: "regular",
+                  child: Row(
+                    children: [
+                      UiHelper.CustomText(
+                        text: "Total balance",
+                        color: const Color(0XFFEAEAEA),
+                        fontsize: 14,
+                        fontweight: FontWeight.w400,
+                        fontfamily: "regular",
+                      ),
+                      const SizedBox(width: 8),
+                      UiHelper.CustomText(
+                        text: "·  All time",
+                        color: Color(0xFF9C9C9C),
+                        fontweight: FontWeight.w400,
+                        fontsize: 14,
+                        fontfamily: "regular",
+                      ),
+                    ],
                   ),
                 ),
 
                 const SizedBox(height: 3),
-
-                // 🔹 Balance row
                 Padding(
                   padding: const EdgeInsets.only(left: 15),
                   child: Row(
@@ -132,12 +141,12 @@ class HomeScreen extends StatelessWidget {
                       UiHelper.CustomSvg(
                         svgPath: "assets/svg/dollar.svg",
                         height: 40,
-                        color: Colors.white,
+                        color: Color(0XFFEAEAEA),
                       ),
                       const SizedBox(width: 5),
                       UiHelper.CustomText(
                         text: "35,980.00",
-                        color: Colors.white,
+                        color: Color(0XFFEAEAEA),
                         fontsize: 50,
                         fontweight: FontWeight.normal,
                         fontfamily: "regular",
@@ -248,143 +257,151 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Row(
+                  padding: const EdgeInsets.only(top: 30),
+                  child: Column(
                     children: [
-                      Expanded(
-                        child: Container(
-                          height: 160, // ✅ fixed height for both cards
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 25,
-                            vertical: 16,
-                          ),
-                          decoration: BoxDecoration(
-                            color: const Color(0xFF1E1E1E), // dark background
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top: 2),
-                                child: const Text(
-                                  "Cash",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16,),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Container(
+                                height: 160, // ✅ fixed height for both cards
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 25,
+                                  vertical: 16,
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 35),
-                                child: Container(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 11,
-                                    vertical: 3,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFB9E7AE),
-                                    borderRadius: BorderRadius.circular(16),
-                                  ),
-                                  child: const Text(
-                                    "+0.8%",
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFF302F32), // dark background
+                                  borderRadius: BorderRadius.circular(20),
                                 ),
-                              ),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 10),
-                                    child: const Text(
-                                      "\$ 11,250.00",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: Container(
-                          height: 160, // ✅ same fixed height
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 25,
-                            vertical: 16,
-                          ),
-                          decoration: BoxDecoration(
-                            color: const Color(0xFF1E1E1E),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top: 2),
-                                child: const Text(
-                                  "Investments",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 39),
-                                    child: Container(
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: 11,
-                                        vertical: 3,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: Color(0xFFB9E7AE),
-                                        borderRadius: BorderRadius.circular(16),
-                                      ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 2),
                                       child: const Text(
-                                        "+1.2%",
+                                        "Cash",
                                         style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 13,
+                                          color: Color(0XFFEAEAEA),
+                                          fontSize: 15,
                                           fontWeight: FontWeight.w400,
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              Row(children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10),
-                                child: const Text(
-                                  "\$ 21,231.00",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 35),
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 11,
+                                          vertical: 3,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFB9E7AE),
+                                          borderRadius: BorderRadius.circular(16),
+                                        ),
+                                        child: const Text(
+                                          "+0.8%",
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(top: 10),
+                                          child: const Text(
+                                            "\$ 11,250.00",
+                                            style: TextStyle(
+                                              color: Color(0XFFEAEAEA),
+                                              fontSize: 22,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ],
-                          ),
-                        ]
+                            ),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: Container(
+                                height: 160, // ✅ same fixed height
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 25,
+                                  vertical: 16,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFF302F32),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 2),
+                                      child: const Text(
+                                        "Investments",
+                                        style: TextStyle(
+                                          color: Color(0XFFEAEAEA),
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(top: 39),
+                                          child: Container(
+                                            padding: const EdgeInsets.symmetric(
+                                              horizontal: 11,
+                                              vertical: 3,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFFB9E7AE),
+                                              borderRadius: BorderRadius.circular(16),
+                                            ),
+                                            child: const Text(
+                                              "+1.2%",
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(top: 10),
+                                          child: const Text(
+                                            "\$ 21,231.00",
+                                            style: TextStyle(
+                                              color: Color(0XFFEAEAEA),
+                                              fontSize: 22,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      )
                     ],
                   ),
                 ),
@@ -418,7 +435,7 @@ class HomeScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 SizedBox(
-                                  height: 17,
+                                  height: 16,
                                   child: UiHelper.CustomSvg(
                                     svgPath: "assets/svg/Group5.svg",
                                   ),
@@ -487,19 +504,37 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 25),
+                const SizedBox(height: 12),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: UiHelper.CustomText(
-                    text: "Goals",
-                    color: Colors.white,
-                    fontsize: 20,
-                    fontweight: FontWeight.w600,
-                    fontfamily: "semibold",
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 19,
+                  ),
+                  child: Container(
+                    height: 130,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF302F32),
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 20,left: 25),
+                          child: const Text(
+                            "Goals",
+                            style: TextStyle(
+                              color: Color(0XFFEAEAEA),
+                              fontSize: 25,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: "bold"
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-
-                const SizedBox(height: 60),
               ],
             ),
           ),
