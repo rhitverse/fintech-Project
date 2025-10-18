@@ -1,7 +1,7 @@
 import 'package:fintechproject/widget/ui_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
-import '../widget/bottom_navigation_item.dart';
+import 'forecast_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -241,9 +241,9 @@ class HomeScreen extends StatelessWidget {
                             show: true,
                             gradient: LinearGradient(
                               colors: [
-                                const Color(0xFFB8AFDB).withOpacity(0.3),
-                                const Color(0xFFB8AFDB).withOpacity(0.3),
-                                const Color(0xFFB8AFDB).withOpacity(0.0),
+                                const Color(0xFFB8AFDB).withValues(alpha: 0.3),
+                                const Color(0xFFB8AFDB).withValues(alpha: 0.3),
+                                const Color(0xFFB8AFDB).withValues(alpha: 0.0),
                               ],
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
@@ -487,7 +487,12 @@ class HomeScreen extends StatelessWidget {
                                   fontfamily: "bold",
                                 ),
                                 ElevatedButton(
-                                  onPressed: () {},
+                                  onPressed: () { Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const ForecastPage(),
+                                    ),
+                                  );},
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.white,
                                     shape: RoundedRectangleBorder(

@@ -45,7 +45,7 @@ class BottomNavigationItem extends StatelessWidget {
                 width: 55,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color(0xFFB9ADDC),
+                  color: Color(0XFFB8AFDB),
                 ),
                 child: Center(
                   child: SvgPicture.asset(

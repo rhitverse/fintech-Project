@@ -1,3 +1,4 @@
+import 'package:fintechproject/widget/ui_helper.dart';
 import 'package:flutter/material.dart';
 
 class AddPage extends StatelessWidget {
@@ -6,15 +7,36 @@ class AddPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Add Page"),
-        backgroundColor: Colors.black,
-      ),
-      backgroundColor: Colors.grey[900],
-      body: const Center(
-        child: Text(
-          "This is the Add Page",
-          style: TextStyle(color: Colors.white, fontSize: 20),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 80, top: 8),
+                  child: Row(
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.arrow_back_ios, color: Color(0XFFEAEAEA)),
+                          Text(
+                            "Back",
+                            style: TextStyle(
+                              color: Color(0XFFEAEAEA),
+                              fontSize: 15,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
