@@ -1,7 +1,6 @@
 import 'package:fintechproject/widget/ui_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
-
 import '../widget/bottom_navigation_item.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -242,9 +241,9 @@ class HomeScreen extends StatelessWidget {
                             show: true,
                             gradient: LinearGradient(
                               colors: [
-                                const Color(0xFFB8AFDB).withValues(alpha: 0.5),
-                                const Color(0xFFB8AFDB).withValues(alpha: 0.5),
-                                const Color(0xFF32303A).withValues(alpha: 0.1),
+                                const Color(0xFFB8AFDB).withOpacity(0.3),
+                                const Color(0xFFB8AFDB).withOpacity(0.3),
+                                const Color(0xFFB8AFDB).withOpacity(0.0),
                               ],
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
@@ -261,18 +260,20 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16,),
+                        padding: const EdgeInsets.symmetric(horizontal: 18),
                         child: Row(
                           children: [
                             Expanded(
                               child: Container(
-                                height: 160, // ✅ fixed height for both cards
+                                height: 160,
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 25,
                                   vertical: 16,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF302F32), // dark background
+                                  color: const Color(
+                                    0xFF302F32,
+                                  ), // dark background
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: Column(
@@ -298,7 +299,9 @@ class HomeScreen extends StatelessWidget {
                                         ),
                                         decoration: BoxDecoration(
                                           color: Color(0xFFB9E7AE),
-                                          borderRadius: BorderRadius.circular(16),
+                                          borderRadius: BorderRadius.circular(
+                                            16,
+                                          ),
                                         ),
                                         child: const Text(
                                           "+0.8%",
@@ -313,7 +316,9 @@ class HomeScreen extends StatelessWidget {
                                     Row(
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.only(top: 10),
+                                          padding: const EdgeInsets.only(
+                                            top: 10,
+                                          ),
                                           child: const Text(
                                             "\$ 11,250.00",
                                             style: TextStyle(
@@ -358,7 +363,9 @@ class HomeScreen extends StatelessWidget {
                                     Row(
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.only(top: 39),
+                                          padding: const EdgeInsets.only(
+                                            top: 39,
+                                          ),
                                           child: Container(
                                             padding: const EdgeInsets.symmetric(
                                               horizontal: 11,
@@ -366,7 +373,8 @@ class HomeScreen extends StatelessWidget {
                                             ),
                                             decoration: BoxDecoration(
                                               color: Color(0xFFB9E7AE),
-                                              borderRadius: BorderRadius.circular(16),
+                                              borderRadius:
+                                                  BorderRadius.circular(16),
                                             ),
                                             child: const Text(
                                               "+1.2%",
@@ -383,7 +391,9 @@ class HomeScreen extends StatelessWidget {
                                     Row(
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.only(top: 10),
+                                          padding: const EdgeInsets.only(
+                                            top: 10,
+                                          ),
                                           child: const Text(
                                             "\$ 21,231.00",
                                             style: TextStyle(
@@ -407,12 +417,12 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 12),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Container(
                     height: 130,
                     padding: const EdgeInsets.all(1),
                     decoration: BoxDecoration(
-                      color: Color(0xffddedce).withValues(alpha: 0.35),
+                      color: Color(0xFFC6E0AE).withValues(alpha: 0.35),
                       borderRadius: BorderRadius.circular(25),
                     ),
                     child: Container(
@@ -504,43 +514,40 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 12),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 19,
-                  ),
-                  child: Container(
-                    height: 130,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF302F32),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20,left: 25),
-                          child: const Text(
-                            "Goals",
-                            style: TextStyle(
-                              color: Color(0XFFEAEAEA),
-                              fontSize: 25,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: "bold"
-                            ),
-                          ),
-                        ),
-                      ],
+          const SizedBox(height: 11),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 18),
+            child: Container(
+              height: 130,
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              decoration: BoxDecoration(
+                color: const Color(0xFF302F32),
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 9), // 👈 replaces top padding
+                  Padding(
+                    padding: const EdgeInsets.only(left: 12),
+                    child: UiHelper.CustomText(
+                      text: "Goals",
+                      color: const Color(0XFFEAEAEA),
+                      fontweight: FontWeight.w600,
+                      fontsize: 27,
+                      fontfamily: "bold",
                     ),
                   ),
-                ),
+                ],
+              ),
+            ),
+          ),
               ],
             ),
           ),
         ),
       ),
-      bottomNavigationBar: const BottomNavigationItem(),
     );
   }
 }

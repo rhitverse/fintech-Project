@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class BottomNavigationItem extends StatefulWidget {
-  const BottomNavigationItem({super.key});
+class BottomNavigationItem extends StatelessWidget {
+  final int selectedIndex;
+  final Function(int) onTap;
 
-  @override
-  State<BottomNavigationItem> createState() => _BottomNavigationItemState();
-}
+  const BottomNavigationItem({
+    super.key,
+    required this.selectedIndex,
+    required this.onTap,
+  });
 
-class _BottomNavigationItemState extends State<BottomNavigationItem> {
-  int selectedIndex = 0;
-
-  final List<String> navIcons = [
+  final List<String> navIcons = const [
     "assets/svg/ic_home.svg",
     "assets/svg/ic_search.svg",
-    "assets/svg/Group5.svg", // 🔹 Middle button
+    "assets/svg/Group5.svg", // middle icon
     "assets/svg/inbox.svg",
     "assets/svg/swap.svg",
   ];
@@ -36,20 +36,16 @@ class _BottomNavigationItemState extends State<BottomNavigationItem> {
           final iconPath = navIcons[index];
           final isSelected = index == selectedIndex;
 
-          // 🔹 Special style for middle icon (Group5.svg)
+          // 🔹 Special case for middle icon
           if (index == 2) {
             return GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedIndex = index;
-                });
-              },
+              onTap: () => onTap(index),
               child: Container(
                 height: 55,
                 width: 55,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color(0xFFB9ADDC), // light purple background
+                  color: Color(0xFFB9ADDC),
                 ),
                 child: Center(
                   child: SvgPicture.asset(
@@ -57,7 +53,7 @@ class _BottomNavigationItemState extends State<BottomNavigationItem> {
                     height: 22,
                     width: 22,
                     colorFilter: const ColorFilter.mode(
-                      Colors.black, // icon color (you can adjust)
+                      Colors.black,
                       BlendMode.srcIn,
                     ),
                   ),
@@ -66,13 +62,9 @@ class _BottomNavigationItemState extends State<BottomNavigationItem> {
             );
           }
 
-          // 🔹 Default style for other icons
+          // 🔹 Normal icons
           return GestureDetector(
-            onTap: () {
-              setState(() {
-                selectedIndex = index;
-              });
-            },
+            onTap: () => onTap(index),
             child: SvgPicture.asset(
               iconPath,
               height: 28,
