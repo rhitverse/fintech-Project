@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widget/ui_helper.dart';
 
 class GoalPage extends StatelessWidget {
   const GoalPage({super.key});
@@ -29,7 +30,7 @@ class GoalPage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 16,top: 14),
+              padding: const EdgeInsets.only(right: 16, top: 14),
               child: Container(
                 width: 42,
                 height: 42,
@@ -38,11 +39,7 @@ class GoalPage extends StatelessWidget {
                   color: Colors.transparent,
                   border: Border.all(color: Colors.grey, width: 1),
                 ),
-                child: const Icon(
-                  Icons.add,
-                  color: Colors.grey,
-                  size: 32,
-                ),
+                child: const Icon(Icons.add, color: Colors.grey, size: 32),
               ),
             ),
           ],
@@ -63,7 +60,7 @@ class GoalPage extends StatelessWidget {
                       text: 'You have 3\n',
                       style: TextStyle(
                         color: Color(0XFFEAE9E5),
-                        fontSize: 50,
+                        fontSize: 48,
                         fontWeight: FontWeight.w500,
                       ),
                       children: <TextSpan>[
@@ -77,6 +74,159 @@ class GoalPage extends StatelessWidget {
                       ],
                     ),
                   ),
+                ),
+                const SizedBox(height: 18),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: const Text(
+                    "Long-term goals focus on empowering users\nto achieve financial independence through\nautomated and personalized planning.",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 19,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 23),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Container(
+                    height: 205,
+                    padding: const EdgeInsets.all(1),
+                    decoration: BoxDecoration(
+                      color: Color(0xFFC6E0AE).withValues(alpha: 0.35),
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 12,
+                      ),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFB8AFDB),
+                        borderRadius: BorderRadius.circular(25),
+                        border: Border.all(color: Colors.black, width: 5),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              right: 5,
+                              bottom: 8,
+                              top: 3,
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(
+                                  height: 16,
+                                  child: UiHelper.CustomSvg(
+                                    svgPath: "assets/svg/Group5.svg",
+                                    color: Color(0xff211552),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 140),
+                                  child: UiHelper.CustomText(
+                                    text: "You're nailing it!",
+                                    color: Color(0xff211552),
+                                    fontsize: 19,
+                                    fontweight: FontWeight.w600,
+                                    fontfamily: "bold",
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 4),
+                                  child: GestureDetector(
+                                    onTap: () {},
+                                    child: const Icon(
+                                      Icons.close,
+                                      size: 20,
+                                      color: Color(0XFF24431D),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              UiHelper.CustomText(
+                                text:
+                                    "we've analyzed your savings and it looks like\nyou'll reach your goal by age 57.",
+                                color: Colors.black,
+                                fontsize: 15,
+                                fontweight: FontWeight.w500,
+                                fontfamily: "regular",
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 19),
+                          Container(
+                            height: 67,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: Colors.white60.withValues(alpha: 0.4),
+                              borderRadius: BorderRadius.circular(14),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 62),
+                              child: Container(
+                                height: 67,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(14),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 20,
+                                      ),
+                                      child: UiHelper.CustomText(
+                                        text: "32",
+                                        color: Colors.black,
+                                        fontsize: 16,
+                                        fontweight: FontWeight.w600,
+                                        fontfamily: "bold",
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 70),
+                                      child: UiHelper.CustomText(
+                                        text: "age 57",
+                                        color: Colors.black,
+                                        fontsize: 24,
+                                        fontweight: FontWeight.w700,
+                                        fontfamily: "bold",
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 11),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Container(
+                    height: 130,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF302F32),
+                      borderRadius: BorderRadius.circular(25)
+                    ),
+                    ),
+
                 ),
               ],
             ),
