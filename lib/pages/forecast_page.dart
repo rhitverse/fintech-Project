@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fintechproject/widget/ui_helper.dart';
+import 'package:flutter_svg/svg.dart';
+
+import 'link_accounts_page.dart';
 
 class ForecastPage extends StatelessWidget {
   const ForecastPage({super.key});
@@ -94,7 +97,7 @@ class ForecastPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 5,left: 10),
+                      padding: const EdgeInsets.only(bottom: 5, left: 10),
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         decoration: const BoxDecoration(
@@ -122,7 +125,7 @@ class ForecastPage extends StatelessWidget {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10,left: 15,right: 15),
+                  padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
                   child: Column(
                     children: [
                       Row(
@@ -145,7 +148,8 @@ class ForecastPage extends StatelessWidget {
                                     padding: const EdgeInsets.only(top: 2),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.min,
-                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         const Text(
                                           "Current net worth",
@@ -155,7 +159,8 @@ class ForecastPage extends StatelessWidget {
                                             fontWeight: FontWeight.w400,
                                           ),
                                         ),
-                                        const SizedBox(width: 4), const SizedBox(width: 4), // text aur icon ke beech halka gap
+                                        const SizedBox(width: 4),
+                                        const SizedBox(width: 4),
                                         Icon(
                                           Icons.help_outline,
                                           color: const Color(0XFF120F16),
@@ -226,14 +231,27 @@ class ForecastPage extends StatelessWidget {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.only(top: 2),
-                                    child: const Text(
-                                      "Income",
-                                      style: TextStyle(
-                                        color: Color(0XFFEAEAEA),
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w400,
-                                        fontFamily: "bold"
-                                      ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        const Text(
+                                          "Income",
+                                          style: TextStyle(
+                                            color: Color(0XFFEAEAEA),
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                        const SizedBox(width: 4),
+                                        const SizedBox(width: 4),
+                                        Icon(
+                                          Icons.help_outline,
+                                          color: const Color(0XFFEAEAEA),
+                                          size: 14,
+                                        ),
+                                      ],
                                     ),
                                   ),
                                   Row(
@@ -286,10 +304,263 @@ class ForecastPage extends StatelessWidget {
                     ],
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              height: 155,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 25,
+                                vertical: 16,
+                              ),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF302F32),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 2),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        const Text(
+                                          "Existing debt",
+                                          style: TextStyle(
+                                            color: Color(0XFFEAEAEA),
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                        const SizedBox(width: 4),
+                                        const SizedBox(width: 4),
+                                        Icon(
+                                          Icons.help_outline,
+                                          color: const Color(0XFFEAEAEA),
+                                          size: 14,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 8),
+                                        child: const Text(
+                                          "\$ 0",
+                                          style: TextStyle(
+                                            color: Color(0XFFEAEAEA),
+                                            fontSize: 22,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 20),
+                                  UiHelper.CustomText(
+                                    text: "You do not have any\nexisting debt.",
+                                    color: Colors.grey,
+                                    fontweight: FontWeight.w400,
+                                    fontsize: 13,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Container(
+                              height: 155,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 25,
+                                vertical: 16,
+                              ),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF302F32),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 2),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        const Text(
+                                          "Financial accounts",
+                                          style: TextStyle(
+                                            color: Color(0XFFEAEAEA),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                        const SizedBox(width: 4),
+                                        const SizedBox(width: 4),
+                                        Icon(
+                                          Icons.help_outline,
+                                          color: const Color(0XFFEAEAEA),
+                                          size: 13,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  const SizedBox(height: 12),
+                                  SizedBox(
+                                    height: 50,
+                                    child: Stack(
+                                      clipBehavior: Clip.none,
+                                      children: [
+                                        _buildBankIcon(
+                                          'assets/svg/bank1icon.svg',
+                                          offsetX: 0,
+                                        ),
+                                        _buildBankIcon(
+                                          'assets/svg/bank2icon.svg',
+                                          offsetX: 22,
+                                        ),
+                                        _buildBankIcon(
+                                          'assets/svg/bank3icon.svg',
+                                          offsetX: 44,
+                                        ),
+                                        _buildBankIcon(
+                                          'assets/svg/Group5.svg',
+                                          bgColor: Color(0xFFAAD8A1),
+                                          offsetX: 66,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 4),
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const LinkAccountsPage(),
+                                          ),
+                                        );
+                                      },
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 16,
+                                          vertical: 6,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Colors.white,
+                                            width: 1,
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            30,
+                                          ),
+                                          color: Colors.transparent,
+                                        ),
+                                        child: const Text(
+                                          "+Link accounts",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w600,
+                                            fontFamily: "bold",
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 25),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 5, left: 10),
+                            child: Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: const BoxDecoration(
+                                color: Color(0xFFB9E7AE),
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Text(
+                                "2",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          const Text(
+                            "Future Financial Goals",
+                            style: TextStyle(
+                              color: Color(0XFFEAEAEA),
+                              fontSize: 24,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: const Text(
+                    "The tool evaluates trade-offs between\npurchasing a house and other goals like",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 19,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildBankIcon(
+    String asset, {
+    Color bgColor = Colors.white,
+    double offsetX = 0,
+  }) {
+    return Positioned(
+      left: offsetX,
+      child: Container(
+        padding: const EdgeInsets.all(6),
+        decoration: BoxDecoration(
+          color: bgColor,
+          shape: BoxShape.circle,
+          border: Border.all(
+            color: const Color(
+              0xFF302F32,
+            ), // match card background for clean border
+            width: 2,
+          ),
+        ),
+        child: SvgPicture.asset(asset, width: 22, height: 22),
       ),
     );
   }
