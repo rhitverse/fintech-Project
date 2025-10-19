@@ -2,6 +2,7 @@ import 'package:fintechproject/widget/ui_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'forecast_page.dart';
+import 'goal_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -270,9 +271,7 @@ class HomeScreen extends StatelessWidget {
                                   vertical: 16,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: const Color(
-                                    0xFF302F32,
-                                  ),
+                                  color: const Color(0xFF302F32),
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: Column(
@@ -486,12 +485,15 @@ class HomeScreen extends StatelessWidget {
                                   fontfamily: "bold",
                                 ),
                                 ElevatedButton(
-                                  onPressed: () { Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const ForecastPage(),
-                                    ),
-                                  );},
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const ForecastPage(),
+                                      ),
+                                    );
+                                  },
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.white,
                                     shape: RoundedRectangleBorder(
@@ -518,35 +520,73 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-          const SizedBox(height: 11),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18),
-            child: Container(
-              height: 130,
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-              decoration: BoxDecoration(
-                color: const Color(0xFF302F32),
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 9),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 12),
-                    child: UiHelper.CustomText(
-                      text: "Goals",
-                      color: const Color(0XFFEAEAEA),
-                      fontweight: FontWeight.w600,
-                      fontsize: 27,
-                      fontfamily: "bold",
+                const SizedBox(height: 11),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 18),
+                  child: Container(
+                    height: 130,
+                    width: double.infinity,
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF302F32),
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 9),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 12, right: 12),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              UiHelper.CustomText(
+                                text: "Goals",
+                                color: const Color(0XFFEAEAEA),
+                                fontweight: FontWeight.w600,
+                                fontsize: 27,
+                                fontfamily: "bold",
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const GoalPage(), // Updated page name
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  height: 38,
+                                  width: 38,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: Colors.white.withOpacity(0.8),
+                                      width: 1,
+                                    ),
+                                    color: Colors.transparent,
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: const Text(
+                                    "3",
+                                    style: TextStyle(
+                                      color: Color(0XFFEAEAEA),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: "medium",
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
-            ),
-          ),
+                ),
+
               ],
             ),
           ),
