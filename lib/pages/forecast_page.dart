@@ -129,7 +129,7 @@ class ForecastPage extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Container(
-                              height: 160,
+                              height: 155,
                               padding: const EdgeInsets.symmetric(
                                 horizontal: 25,
                                 vertical: 16,
@@ -143,13 +143,25 @@ class ForecastPage extends StatelessWidget {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.only(top: 2),
-                                    child: const Text(
-                                      "Current net worth",
-                                      style: TextStyle(
-                                        color: Color(0XFF120F16),
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w400,
-                                      ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        const Text(
+                                          "Current net worth",
+                                          style: TextStyle(
+                                            color: Color(0XFF120F16),
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                        const SizedBox(width: 4), const SizedBox(width: 4), // text aur icon ke beech halka gap
+                                        Icon(
+                                          Icons.help_outline,
+                                          color: const Color(0XFF120F16),
+                                          size: 14,
+                                        ),
+                                      ],
                                     ),
                                   ),
                                   Row(
@@ -157,7 +169,7 @@ class ForecastPage extends StatelessWidget {
                                       Padding(
                                         padding: const EdgeInsets.only(top: 10),
                                         child: const Text(
-                                          "\$ 11,250.00",
+                                          "\$ 35,981.00",
                                           style: TextStyle(
                                             color: Color(0XFF120F16),
                                             fontSize: 22,
@@ -167,6 +179,32 @@ class ForecastPage extends StatelessWidget {
                                       ),
                                     ],
                                   ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 20),
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 20,
+                                        vertical: 6,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: Colors.black,
+                                          width: 1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(30),
+                                        color: Colors.transparent,
+                                      ),
+                                      child: const Text(
+                                        "Edit",
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                          fontFamily: "bold",
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -174,7 +212,7 @@ class ForecastPage extends StatelessWidget {
                           const SizedBox(width: 10),
                           Expanded(
                             child: Container(
-                              height: 160,
+                              height: 155,
                               padding: const EdgeInsets.symmetric(
                                 horizontal: 25,
                                 vertical: 16,
@@ -189,11 +227,12 @@ class ForecastPage extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.only(top: 2),
                                     child: const Text(
-                                      "Investments",
+                                      "Income",
                                       style: TextStyle(
                                         color: Color(0XFFEAEAEA),
                                         fontSize: 15,
-                                        fontWeight: FontWeight.w600,
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: "bold"
                                       ),
                                     ),
                                   ),
@@ -211,6 +250,32 @@ class ForecastPage extends StatelessWidget {
                                         ),
                                       ),
                                     ],
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 20),
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 20,
+                                        vertical: 6,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: Colors.white,
+                                          width: 1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(30),
+                                        color: Colors.transparent,
+                                      ),
+                                      child: const Text(
+                                        "Edit",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                          fontFamily: "bold",
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                 ],
                               ),
