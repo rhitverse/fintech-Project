@@ -153,7 +153,6 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                // 🔹 Chart Section
                 const SizedBox(height: 10),
                 SizedBox(
                   height: 180,
@@ -273,7 +272,7 @@ class HomeScreen extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   color: const Color(
                                     0xFF302F32,
-                                  ), // dark background
+                                  ),
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: Column(
@@ -337,7 +336,7 @@ class HomeScreen extends StatelessWidget {
                             const SizedBox(width: 10),
                             Expanded(
                               child: Container(
-                                height: 160, // ✅ same fixed height
+                                height: 160,
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 25,
                                   vertical: 16,
@@ -533,7 +532,7 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 9), // 👈 replaces top padding
+                  const SizedBox(height: 9),
                   Padding(
                     padding: const EdgeInsets.only(left: 12),
                     child: UiHelper.CustomText(
