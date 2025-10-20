@@ -157,7 +157,7 @@ class GoalPage extends StatelessWidget {
                             children: [
                               UiHelper.CustomText(
                                 text:
-                                "we've analyzed your savings and it looks like\nyou'll reach your goal by age 57.",
+                                    "we've analyzed your savings and it looks like\nyou'll reach your goal by age 57.",
                                 color: Colors.black,
                                 fontsize: 15,
                                 fontweight: FontWeight.w500,
@@ -216,98 +216,138 @@ class GoalPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 14),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Container(
-                    height: 140,
+                    height: 150,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: const Color(0xFF302F32),
                       borderRadius: BorderRadius.circular(25),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 20, bottom: 50),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 18,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // 🏠 Image container
-                          Container(
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                              color: const Color(0xffC7D1DB),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Image.asset(
-                              "assets/image/home.png",
-                              fit: BoxFit.contain,
-                            ),
-                          ),
-                          const SizedBox(width: 21),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 17),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      "Buy a house",
-                                      style: TextStyle(
-                                        color: Color(0XFFEAE9E5),
-                                        fontSize: 23,
-                                        fontWeight: FontWeight.w400,
-                                      ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    height: 42,
+                                    width: 42,
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xffC7D1DB),
+                                      borderRadius: BorderRadius.circular(12),
                                     ),
-                                    const SizedBox(height: 6),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 5),
-                                      child: RichText(
-                                        text: const TextSpan(
-                                          children: [
-                                            TextSpan(
-                                              text: "Individual",
-                                              style: TextStyle(
-                                                color: Color(0XFFEAE9E5),
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                            TextSpan(
-                                              text: " · Real Estate",
-                                              style: TextStyle(
-                                                color: Colors.grey,
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          ],
+                                    child: Image.asset(
+                                      "assets/image/home.png",
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 14),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: const [
+                                      Text(
+                                        "Buy a house",
+                                        style: TextStyle(
+                                          color: Color(0XFFEAE9E5),
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w500,
                                         ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(width: 105),
-                                InkWell(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => HousePage(),
+                                      SizedBox(height: 4),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "Individual",
+                                            style: TextStyle(
+                                              color: Color(0XFFEAE9E5),
+                                              fontSize: 15,
+                                            ),
+                                          ),
+                                          Text(
+                                            "  ·  Real Estate",
+                                            style: TextStyle(
+                                              color: Colors.grey,
+                                              fontSize: 15,
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                    );
-                                  },
-                                  child: const Icon(
-                                    Icons.arrow_forward_ios,
-                                    color: Colors.grey,
-                                    size: 20,
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(width: 105),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => HousePage(),
+                                    ),
+                                  );
+                                },
+                                child: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.grey,
+                                  size: 20,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 21),
+                          Stack(
+                            children: [
+                              Container(
+                                height: 3,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey.withOpacity(0.3),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                              ),
+                              FractionallySizedBox(
+                                widthFactor: 51385 / 167800,
+                                child: Container(
+                                  height: 3,
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFFC6B9F5),
+                                    borderRadius: BorderRadius.circular(5),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
+                          const SizedBox(height: 10),
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "\$ 51,385.00",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
+                              ),
+                              Text(
+                                "\$ 167,800.00",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Container(height: ,),
                         ],
                       ),
                     ),
