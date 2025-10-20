@@ -1,5 +1,7 @@
+import 'package:fintechproject/pages/retire_page.dart';
 import 'package:flutter/material.dart';
 import '../widget/ui_helper.dart';
+import 'college_page.dart';
 import 'house_page.dart';
 
 class GoalPage extends StatelessWidget {
@@ -220,7 +222,7 @@ class GoalPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Container(
-                    height: 150,
+                    height: 148,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: const Color(0xFF302F32),
@@ -347,7 +349,266 @@ class GoalPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Container(height: ,),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 11),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Container(
+                    height: 148,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF302F32),
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 18,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                height: 42,
+                                width: 42,
+                                decoration: BoxDecoration(
+                                  color: Color(0xffc7d1db),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Image.asset(
+                                  "assets/image/college.png",
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              const SizedBox(width: 14),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "College for kid",
+                                    style: TextStyle(
+                                      color: Color(0xffeae9e5),
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  SizedBox(height: 4),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Individual",
+                                        style: TextStyle(
+                                          color: Color(0XFFEAE9E5),
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                      Text(
+                                        "·  Education",
+                                        style: TextStyle(
+                                          color: Colors.grey,
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(width: 127),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => CollegePage(),
+                                    ),
+                                  );
+                                },
+                                child: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.grey,
+                                  size: 20,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 21),
+                          Stack(
+                            children: [
+                              Container(
+                                height: 3,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey.withOpacity(0.3),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                              ),
+                              FractionallySizedBox(
+                                widthFactor: 3500 / 61360,
+                                child: Container(
+                                  height: 3,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFC6B9F5),
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 10),
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "\$ 3,500.00",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
+                              ),
+                              Text(
+                                "\$ 61,360.99",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 11),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Container(
+                    height: 150,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF302F32),
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 18,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                height: 42,
+                                width: 42,
+                                decoration: BoxDecoration(
+                                  color: Color(0xffc7d1db),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Image.asset(
+                                  "assets/image/college.png",
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              const SizedBox(width: 14),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Retire at age 69",
+                                    style: TextStyle(
+                                      color: Color(0xffeae9e5),
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  SizedBox(height: 4),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Individual",
+                                        style: TextStyle(
+                                          color: Color(0XFFEAE9E5),
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                      Text(
+                                        "·  Education",
+                                        style: TextStyle(
+                                          color: Colors.grey,
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(width: 115),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => RetirePage(),
+                                    ),
+                                  );
+                                },
+                                child: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.grey,
+                                  size: 20,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 21),
+                          Stack(
+                            children: [
+                              Container(
+                                height: 3,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey.withOpacity(0.3),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                              ),
+                              FractionallySizedBox(
+                                widthFactor: 3500 / 61360,
+                                child: Container(
+                                  height: 3,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFC6B9F5),
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 10),
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "\$ 3,500.00",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
+                              ),
+                              Text(
+                                "\$ 61,360.99",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),
