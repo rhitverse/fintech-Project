@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widget/ui_helper.dart';
+import 'house_page.dart';
 
 class GoalPage extends StatelessWidget {
   const GoalPage({super.key});
@@ -156,7 +157,7 @@ class GoalPage extends StatelessWidget {
                             children: [
                               UiHelper.CustomText(
                                 text:
-                                    "we've analyzed your savings and it looks like\nyou'll reach your goal by age 57.",
+                                "we've analyzed your savings and it looks like\nyou'll reach your goal by age 57.",
                                 color: Colors.black,
                                 fontsize: 15,
                                 fontweight: FontWeight.w500,
@@ -215,18 +216,102 @@ class GoalPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 11),
+                SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Container(
-                    height: 130,
+                    height: 140,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Color(0xFF302F32),
-                      borderRadius: BorderRadius.circular(25)
+                      color: const Color(0xFF302F32),
+                      borderRadius: BorderRadius.circular(25),
                     ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20, bottom: 50),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          // 🏠 Image container
+                          Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              color: const Color(0xffC7D1DB),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Image.asset(
+                              "assets/image/home.png",
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                          const SizedBox(width: 21),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 17),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      "Buy a house",
+                                      style: TextStyle(
+                                        color: Color(0XFFEAE9E5),
+                                        fontSize: 23,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 6),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 5),
+                                      child: RichText(
+                                        text: const TextSpan(
+                                          children: [
+                                            TextSpan(
+                                              text: "Individual",
+                                              style: TextStyle(
+                                                color: Color(0XFFEAE9E5),
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ),
+                                            TextSpan(
+                                              text: " · Real Estate",
+                                              style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(width: 105),
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => HousePage(),
+                                      ),
+                                    );
+                                  },
+                                  child: const Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.grey,
+                                    size: 20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-
+                  ),
                 ),
               ],
             ),
