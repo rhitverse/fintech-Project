@@ -578,7 +578,7 @@ class GoalPage extends StatelessWidget {
                                 ),
                               ),
                               FractionallySizedBox(
-                                widthFactor: 3500 / 61360,
+                                widthFactor: 35000 / 61360,
                                 child: Container(
                                   height: 3,
                                   decoration: BoxDecoration(
@@ -594,7 +594,7 @@ class GoalPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "\$ 3,500.00",
+                                "\$ 35,000.00",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 15,
