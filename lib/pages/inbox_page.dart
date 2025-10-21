@@ -100,12 +100,27 @@ class InboxPage extends StatelessWidget {
                           spots: const [
                             FlSpot(0, 4.4),
                             FlSpot(1, 4.2),
-                            FlSpot(2, 4.4),
+                            FlSpot(2, 4.3),
                             FlSpot(3, 4.2),
                             FlSpot(4, 4.4),
-                            FlSpot(5, 4.5),
+                            FlSpot(5, 4.1),
                             FlSpot(6, 4.2),
-                            FlSpot(7, 4.8),
+                            FlSpot(7, 4.2),
+                            FlSpot(8, 4.4),
+                            FlSpot(9, 4.3),
+                            FlSpot(10, 4.5),
+                            FlSpot(11, 4.3),
+                            FlSpot(12, 4.2),
+                            FlSpot(13, 4.4),
+                            FlSpot(14, 4.3),
+                            FlSpot(15, 4.4),
+                            FlSpot(16, 4.5),
+                            FlSpot(17, 4.5),
+                            FlSpot(18, 4.8),
+                            FlSpot(19, 4.6),
+                            FlSpot(20, 4.4),
+                            FlSpot(21, 4.3),
+                            FlSpot(22, 4.5),
                           ],
                           isCurved: false,
                           color: const Color(0xFFB9B0DC),
@@ -128,6 +143,17 @@ class InboxPage extends StatelessWidget {
                       ],
                     ),
                   ),
+                ),
+                const SizedBox(height: 20),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    _ChartLabel(text: "1D"),
+                    _ChartLabel(text: "1W"),
+                    _ChartLabel(text: "1M"),
+                    _ChartLabel(text: "YTD"),
+                    _ChartLabel(text: "MAX", selected: true),
+                  ],
                 ),
                 SizedBox(height: 22),
                 Padding(
@@ -216,6 +242,31 @@ class InboxPage extends StatelessWidget {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+class _ChartLabel extends StatelessWidget {
+  final String text;
+  final bool selected;
+
+  const _ChartLabel({required this.text, this.selected = false});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      decoration: BoxDecoration(
+        border: selected ? Border.all(color: Colors.white, width: 1) : null,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          color: selected ? Colors.white : Colors.grey,
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
         ),
       ),
     );
