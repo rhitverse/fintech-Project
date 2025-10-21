@@ -109,8 +109,8 @@ class InboxPage extends StatelessWidget {
                             FlSpot(8, 4.4),
                             FlSpot(9, 4.3),
                             FlSpot(10, 4.5),
-                            FlSpot(11, 4.3),
-                            FlSpot(12, 4.2),
+                            FlSpot(11, 4.2),
+                            FlSpot(12, 4.3),
                             FlSpot(13, 4.4),
                             FlSpot(14, 4.3),
                             FlSpot(15, 4.4),
@@ -180,7 +180,7 @@ class InboxPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(right: 5, bottom: 8),
+                            padding: const EdgeInsets.only(left: 0, bottom: 8),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -190,8 +190,8 @@ class InboxPage extends StatelessWidget {
                                     svgPath: "assets/svg/Group5.svg",
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 160),
+                                SizedBox(width: 8),
+                                Expanded(
                                   child: UiHelper.CustomText(
                                     text: "Risk to savings",
                                     color: Color(0XFF24431D),
@@ -200,12 +200,33 @@ class InboxPage extends StatelessWidget {
                                     fontfamily: "bold",
                                   ),
                                 ),
+                                Row(
+                                  children: [
+                                    Container(
+                                      height: 20,
+                                      width: 20,
+                                      decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        "2",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                                 Padding(
                                   padding: const EdgeInsets.only(right: 4),
                                   child: GestureDetector(
                                     onTap: () {},
                                     child: const Icon(
-                                      Icons.close,
+                                      Icons.expand_more,
                                       size: 20,
                                       color: Color(0XFF24431D),
                                     ),
@@ -219,26 +240,68 @@ class InboxPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 11),
+                const SizedBox(height: 21),
+
+                // Tab Buttons
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 18),
                   child: Container(
                     height: 47,
-                    width: double.infinity,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 12,
-                    ),
                     decoration: BoxDecoration(
                       color: const Color(0xFF302F32),
                       borderRadius: BorderRadius.circular(25),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [],
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: const [
+                        _TabButton(text: "Categories", selected: true),
+                        _TabButton(text: "Tags"),
+                        _TabButton(text: "List"),
+                      ],
                     ),
                   ),
                 ),
+
+                const SizedBox(height: 20),
+
+                // Category List
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 18),
+                  child: Column(
+                    children: const [
+                      _CategoryItem(
+                        icon: Icons.shopping_bag_outlined,
+                        title: "Shopping",
+                        transactions: "46 transactions",
+                        amount: "-\$8,125.00",
+                        percent: "42%",
+                      ),
+                      _CategoryItem(
+                        icon: Icons.home_repair_service_outlined,
+                        title: "Service",
+                        transactions: "38 transactions",
+                        amount: "-\$4,841.12",
+                        percent: "19%",
+                      ),
+                      _CategoryItem(
+                        icon: Icons.videogame_asset_outlined,
+                        title: "Entertainment",
+                        transactions: "26 transactions",
+                        amount: "-\$1,524.00",
+                        percent: "14%",
+                      ),
+                      _CategoryItem(
+                        icon: Icons.swap_horiz,
+                        title: "Transfers",
+                        transactions: "18 transactions",
+                        amount: "-\$614.76",
+                        percent: "9%",
+                      ),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 20),
               ],
             ),
           ),
@@ -247,6 +310,8 @@ class InboxPage extends StatelessWidget {
     );
   }
 }
+
+// Chart Label
 class _ChartLabel extends StatelessWidget {
   final String text;
   final bool selected;
@@ -268,6 +333,112 @@ class _ChartLabel extends StatelessWidget {
           fontSize: 14,
           fontWeight: FontWeight.w500,
         ),
+      ),
+    );
+  }
+}
+
+// Tab Button
+class _TabButton extends StatelessWidget {
+  final String text;
+  final bool selected;
+  const _TabButton({required this.text, this.selected = false});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 6),
+      decoration: BoxDecoration(
+        color: selected ? const Color(0xFFC3A8FF) : Colors.transparent,
+        borderRadius: BorderRadius.circular(18),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          color: selected ? Colors.black : Colors.white,
+          fontWeight: FontWeight.w600,
+          fontSize: 13,
+        ),
+      ),
+    );
+  }
+}
+
+// Category Item
+class _CategoryItem extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String transactions;
+  final String amount;
+  final String percent;
+
+  const _CategoryItem({
+    required this.icon,
+    required this.title,
+    required this.transactions,
+    required this.amount,
+    required this.percent,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 16),
+      child: Row(
+        children: [
+          Container(
+            height: 42,
+            width: 42,
+            decoration: BoxDecoration(
+              color: const Color(0xFF302F32),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Icon(icon, color: Colors.white, size: 20),
+          ),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 15,
+                  ),
+                ),
+                Text(
+                  transactions,
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.6),
+                    fontSize: 12,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text(
+                amount,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14,
+                ),
+              ),
+              Text(
+                percent,
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.6),
+                  fontSize: 12,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
