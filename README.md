@@ -18,8 +18,6 @@ The interface is designed with a premium dark theme, clear data hierarchy, and i
 
 ![FinTech App UI](assets/image/fintech.jpg)
 
-> If your image file name/path is different, just replace the path above accordingly.
-
 ## 🚀 Tech Stack
 
 - **Flutter (Dart)** for cross-platform mobile UI
