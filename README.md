@@ -16,7 +16,7 @@ The interface is designed with a premium dark theme, clear data hierarchy, and i
 
 ## 🖼️ UI Preview
 
-![FinTech App UI](./assets/images/fintech.jpg)
+![FinTech App UI](assets/image/fintech.jpg)
 
 > If your image file name/path is different, just replace the path above accordingly.
 
