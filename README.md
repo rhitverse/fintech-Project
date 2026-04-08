@@ -1,16 +1,32 @@
-# fintechproject
+# FinTech Project 💸📊
 
-A new Flutter project.
+A modern **FinTech mobile application UI** built with **Flutter** to help users manage personal finances in a clean, intuitive, and powerful way.
 
-## Getting Started
+## ✨ Overview
 
-This project is a starting point for a Flutter application.
+This project presents a sleek and user-friendly financial dashboard experience where users can:
 
-A few resources to get you started if this is your first Flutter project:
+- Track total balance and portfolio growth
+- Monitor cash and investment performance
+- Manage short-term and long-term financial goals
+- Analyze expenses and savings patterns
+- Get AI-powered insights for better financial planning
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The interface is designed with a premium dark theme, clear data hierarchy, and interactive cards/charts for a smooth user experience.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🖼️ UI Preview
+
+![FinTech App UI](./assets/images/fintech.jpg)
+
+> If your image file name/path is different, just replace the path above accordingly.
+
+## 🚀 Tech Stack
+
+- **Flutter (Dart)** for cross-platform mobile UI
+- Native platform support (Android/iOS)
+- Chart-driven analytics components
+- Modular and scalable project structure
+
+## 🎯 Project Goal
+
+To build a modern personal finance app experience that combines beautiful UI with practical financial tools—so users can make smarter money decisions with confidence.
